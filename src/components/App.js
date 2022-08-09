@@ -91,12 +91,14 @@ const Topo = styled.div`
 
     img {
         width: 50%;
+        max-width: 300px;
         height: auto;
     }
 `
 
 const BoxTamanho = styled.div`
     width: 50vw;
+    max-width: 300px;
     height: 200px;
     background-image: url(${bgimg});
     display: flex;
