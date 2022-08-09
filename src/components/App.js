@@ -6,6 +6,9 @@ import bgimg from "../imgs/bg.svg"
 
 export default function App() {
     const [tamAnel, setTamAnel] = useState(20);
+    let tamdiv = tamAnel*1.47;
+
+    console.log(tamdiv)
     const [aro, setAro] = useState(10)
 
     useEffect(() => {
@@ -53,7 +56,7 @@ export default function App() {
 
             <BoxTamanho>
                 <Quadrado>
-                    <Circulo tamAnel={`${tamAnel}mm`} />
+                    <Circulo tamAnel={`${tamdiv}mm`} />
                 </Quadrado>
                 
             </BoxTamanho>
@@ -97,7 +100,7 @@ const Topo = styled.div`
 `
 
 const BoxTamanho = styled.div`
-    width: 50vw;
+    width: 300px;
     max-width: 300px;
     height: 200px;
     background-image: url(${bgimg});
@@ -107,16 +110,16 @@ const BoxTamanho = styled.div`
     margin-top: 40px;
 `
 const Circulo = styled.div`
-    width: ${props => props.tamAnel};
-    height: ${props => props.tamAnel};
+    width: ${props => props.tamAnel} !important;
+    height: ${props => props.tamAnel} !important;
     border-radius: 100px;
     border: 1px solid black;
     background-color: #FFFFFF;
 `
 
 const Quadrado = styled.div`
-    width: ${props => props.tamAnel};
-    height: ${props => props.tamAnel};
+    width: ${props => props.tamAnel}!important;
+    height: ${props => props.tamAnel}!important;
     border: 1px solid black;
 
 `
