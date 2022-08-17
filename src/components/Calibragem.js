@@ -39,7 +39,7 @@ const Container = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 5vh;
+    padding-top: 2vh;
 
     div {
         display: flex;
