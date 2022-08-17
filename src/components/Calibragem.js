@@ -15,7 +15,7 @@ export default function Calibragem () {
             </Ajuste>
             
             <div>
-                <input type="range" name="tamanho" min="0" max="400" step="1" value={tamCartao} onChange={e => setTamCartao(e.target.value)} />
+                <input type="range" name="tamanho" min="200" max="400" step="1" value={tamCartao} onChange={e => setTamCartao(e.target.value)} />
                 <Link to={"/MedicaoComAnel"}>
                     <button>Pronto, já calibrei!</button>
                 </Link>
@@ -31,11 +31,11 @@ export default function Calibragem () {
 }
 const Container = styled.div`
     width: 100vw;
-    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
+    padding: 10vh 0;
 
     div {
         display: flex;
@@ -56,7 +56,7 @@ const Container = styled.div`
         border: none;
         border-radius: 5px;
         cursor: pointer;
-        box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.1);
+        box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.1);
     }
 
     input {
@@ -94,15 +94,16 @@ const Container = styled.div`
 
 const Ajuste = styled.div`
     width: 80%;
+    height: auto;
+    margin-bottom: 10vh;
 `
 
 const Cartao = styled.div`
     width: ${props => props.largura};
     max-width: 100%;
-    height: 60vh;
-    margin-bottom: 100px;
+    height: 50vh;
     border-radius: 20px;
-    border: 2px solid black;
+    border: 1px solid black;
     padding: 30px;
     background-color: #F7EDE4;
 

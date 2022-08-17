@@ -22,7 +22,6 @@ export default function Home () {
 }
 const Container = styled.div`
     width: 100vw;
-    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -42,7 +41,7 @@ const Container = styled.div`
         border: none;
         border-radius: 5px;
         cursor: pointer;
-        box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.1);
+        box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.1);
     }
 `
 
@@ -58,7 +57,6 @@ const Topo = styled.div`
         height: auto;
         position: inherit;
         margin-bottom: 100px;
-        margin-top: -100px;
     }
 `
 

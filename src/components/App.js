@@ -11,7 +11,7 @@ import Calibragem from "./Calibragem";
 import wallpaper from "../imgs/wallpaper.png";
 
 export default function App() {
-    const [tamCartao, setTamCartao] = useState("300");
+    const [tamCartao, setTamCartao] = useState("400");
     const umCm = tamCartao / 5.4;
 
     return (
@@ -41,7 +41,6 @@ const GlobalStyled = createGlobalStyle`
     *, body {
         box-sizing: border-box;
         cursor: default;
-        
     a {
         text-decoration: none;
     }

@@ -11,8 +11,6 @@ export default function Home() {
     
     const tamAnelCm = tamAnel / umCm;
 
-    console.log(tamAnelCm);
-
     const [aro, setAro] = useState(10)
 
     useEffect(() => {
