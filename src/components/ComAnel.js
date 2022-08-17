@@ -1,8 +1,9 @@
 import { useEffect, useState, useContext } from "react"
 import styled from "styled-components"
-import logo from "../imgs/logo.svg"
-import bgimg from "../imgs/bg.svg"
 import UserContext from "../context/UserContext"; 
+import { Link } from "react-router-dom";
+
+import bganel from "../imgs/bganel.png"
 
 export default function Home() {
     const { umCm } = useContext(UserContext);
@@ -15,7 +16,7 @@ export default function Home() {
 
     useEffect(() => {
         if (tamAnelCm < 1.45) {
-            setAro("Faça o ajuste corretamente")
+            setAro("Aro: ##")
         } else if (tamAnelCm <= 1.48) {
             setAro("Aro: 10")
         } else if (tamAnelCm <= 1.52) {
@@ -69,27 +70,34 @@ export default function Home() {
         } else if (tamAnelCm <= 2.32) {
             setAro("Aro: 35")
         } else {
-            setAro("Faça o ajuste corretamente")
+            setAro("Aro: ##")
         }
     }, [tamAnel])
     
     return (
         <Container>
-            <Topo>
-                <img src={logo}></img>
-            </Topo>
+            <BoxTamanho>
+                <CirculoMaior>
+                    <Circulo tamAnel={`${tamAnel}px`}><img src={bganel}></img></Circulo>
+                </CirculoMaior>
+            </BoxTamanho>
 
             <h1>{aro}</h1>
-            <BoxTamanho>
-                <Quadrado>
-                    <Circulo tamAnel={`${tamAnel}px`} />
-                </Quadrado>
-                
-            </BoxTamanho>
             
-            <div>
-                <input type="range" name="tamanho" min="50" max="150" step="1" value={tamAnel} onChange={e => setTamAnel(e.target.value)} />
-            </div>
+            <Instrucoes>
+                <h2>Instrução:</h2>
+                <h3> Posicione O ANEL na figura acima e ajuste-a arrastando a bolinha abaixo, até que a figura fique do mesmo tamanho que o anel.</h3>
+            </Instrucoes>
+
+            <Botoes>
+            <input type="range" name="tamanho" min="50" max="200" step="0.5" value={tamAnel} onChange={e => setTamAnel(e.target.value)} />
+                <a href="https://www.lalunapratas.com.br" target="_blank">
+                    <button>Ir para o site</button>
+                </a>
+                <Link to={"/Calibragem"}>
+                    <Voltar>Voltar</Voltar>
+                </Link>
+            </Botoes>
 
         </Container>
     )
@@ -101,7 +109,6 @@ const Container = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
     padding-bottom: 20%;
 
     div {
@@ -117,6 +124,18 @@ const Container = styled.div`
         display: flex;
         align-items: center;
     }
+
+    h2 {
+        font-weight: bold;
+        line-height: 25px;
+        font-size: 20px;
+    }
+
+    h3 {
+        line-height: 20px;
+        font-size: 16px;
+    }
+
     input {
     -webkit-appearance: none;
     appearance: none;
@@ -138,7 +157,7 @@ const Container = styled.div`
     box-shadow: 0px 2px 2px 2px rgba(0, 0, 0, 0.1);   
     background: #A3612F;     
     cursor: pointer;
-}
+    }
 
     input::-moz-range-thumb {
     width: 25px;
@@ -147,44 +166,74 @@ const Container = styled.div`
     box-shadow: 0px 2px 2px 2px rgba(0, 0, 0, 0.1);
     background: #A3612F;
     cursor: pointer;
-}
-`
-
-const Topo = styled.div`
-    width: 100vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 30px;
-
-    img {
-        width: 50%;
-        max-width: 300px;
-        height: auto;
     }
 `
 
 const BoxTamanho = styled.div`
     width: 60vw;
-    height: 250px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    height: 30vh;
+    align-items: left;
     margin-top: 40px;
+    border-left: 1px solid black;
+    border-bottom: 1px solid black;
+    position: relative;
 `
-const Quadrado = styled.div`
+
+const CirculoMaior = styled.div`
     width: ${props => props.tamAnel};
     height: ${props => props.tamAnel};
     padding: 5px;
     background-color: #CF6B2D;
     border-radius: 100px;
-    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    bottom: 0px;
 `
 
 const Circulo = styled.div`
     width: ${props => props.tamAnel};
     height: ${props => props.tamAnel};
     border-radius: 100px;
-    background-color: #F7EDE4;
+    background-image: ${bganel};
+
+    img {
+        border-radius: 100px;
+    }
 `
 
+const Botoes = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: fixed;
+    bottom: 5vh;
+
+    button {
+        width: 60vw;
+        height: auto;
+        margin: 20px;
+        padding: 20px;
+        background-color: #A3612F;
+        color: #FFFFFF;
+        font-size: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.1);
+    }
+`
+
+const Voltar = styled.div`
+    display: flex;
+    align-items: center;
+    color: #A3612F;
+    cursor: pointer;
+    font-size: 20px;
+`
+
+const Instrucoes = styled.div`
+    width: 80vw;
+    text-align: left;
+`

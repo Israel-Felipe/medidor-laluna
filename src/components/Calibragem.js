@@ -14,7 +14,12 @@ export default function Calibragem () {
                 <Cartao largura={`${tamCartao}px`}><img src={logo}></img><div></div></Cartao>
             </Ajuste>
             
-            <div>
+            <Instrucoes>
+                <h2>Instrução:</h2>
+                <h3> Para termos maior precisão com o medidor, precisamos calibrá-lo de acordo com a sua tela. Para isso, posicione um CARTÃO BANCÁRIO na figura acima e ajuste-a arrastando a bolinha abaixo, até que a figura fique com a mesma LARGURA do cartão.</h3>
+            </Instrucoes>
+
+            <Botoes>
                 <input type="range" name="tamanho" min="200" max="400" step="1" value={tamCartao} onChange={e => setTamCartao(e.target.value)} />
                 <Link to={"/MedicaoComAnel"}>
                     <button>Pronto, já calibrei!</button>
@@ -22,7 +27,7 @@ export default function Calibragem () {
                 <Link to={"/"}>
                     <Voltar>Voltar</Voltar>
                 </Link> 
-            </div>
+            </Botoes>
             
             
             
@@ -34,31 +39,24 @@ const Container = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    padding: 10vh 0;
+    padding-top: 5vh;
 
     div {
         display: flex;
         flex-direction: column;
         justify-content: center;
     }
-    button {
-        width: 60vw;
-        height: auto;
-        margin: 20px;
-        padding: 20px;
-        background-color: #A3612F;
-        color: #FFFFFF;
+
+    h2 {
+        font-weight: bold;
+        line-height: 25px;
         font-size: 20px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.1);
     }
 
+    h3 {
+        line-height: 20px;
+        font-size: 16px;
+    }
     input {
     -webkit-appearance: none;
     appearance: none;
@@ -95,18 +93,43 @@ const Container = styled.div`
 const Ajuste = styled.div`
     width: 80%;
     height: auto;
-    margin-bottom: 10vh;
+    margin-bottom: 3vh;
 `
 
 const Cartao = styled.div`
     width: ${props => props.largura};
     max-width: 100%;
-    height: 50vh;
+    height: 40vh;
     border-radius: 20px;
     border: 1px solid black;
     padding: 30px;
     background-color: #F7EDE4;
 
+`
+
+const Botoes = styled.div`
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: fixed;
+        bottom: 5vh;
+
+        button {
+        width: 60vw;
+        height: auto;
+        margin: 20px;
+        padding: 20px;
+        background-color: #A3612F;
+        color: #FFFFFF;
+        font-size: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.1);
+    }
 `
 
 const Voltar = styled.div`
@@ -115,4 +138,9 @@ const Voltar = styled.div`
     color: #A3612F;
     cursor: pointer;
     font-size: 20px;
+`
+
+const Instrucoes = styled.div`
+    width: 80vw;
+    text-align: left;
 `

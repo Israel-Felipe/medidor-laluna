@@ -9,17 +9,19 @@ export default function Home () {
                 <img src={logo}/>
             </Topo>
 
-            <Link to={"/Calibragem"}>
-                <button>Tenho um anel para usar de modelo</button>
-            </Link>
-            
-            <Link to={"/Calibragem"}>
-                <button>Não tenho nenhum anel para modelo</button>
-            </Link>
-            
+            <Botoes>
+                <Link to={"/Calibragem"}>
+                    <button>Tenho um anel para usar de modelo</button>
+                </Link>
+                
+                <Link to={"/Calibragem"}>
+                    <Botao2>Não tenho nenhum anel para modelo</Botao2>
+                </Link>
+            </Botoes>
         </Container>
     )
 }
+
 const Container = styled.div`
     width: 100vw;
     display: flex;
@@ -30,7 +32,7 @@ const Container = styled.div`
     button {
         width: 60vw;
         height: auto;
-        margin: 20px;
+        margin: 15px;
         padding: 20px;
         background-color: #A3612F;
         color: #FFFFFF;
@@ -60,3 +62,15 @@ const Topo = styled.div`
     }
 `
 
+const Botoes = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: fixed;
+    bottom: 20vh;
+`
+
+const Botao2 = styled.button`
+    background-color: #FFFFFF !important;
+    color: #A3612F !important;
+`
