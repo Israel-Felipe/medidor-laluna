@@ -20,7 +20,7 @@ export default function Calibragem () {
             </Instrucoes>
 
             <Botoes>
-                <input type="range" name="tamanho" min="200" max="300" step="1" value={tamCartao} onChange={e => setTamCartao(e.target.value)} />
+                <input type="range" name="tamanho" min="200" max="400" step="1" value={tamCartao} onChange={e => setTamCartao(e.target.value)} />
                 <Link to={"/MedicaoComAnel"}>
                     <button>Pronto, já calibrei!</button>
                 </Link>
