@@ -36,7 +36,7 @@ const Container = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-
+    
     div {
         display: flex;
         flex-direction: column;
@@ -91,6 +91,7 @@ const Container = styled.div`
     cursor: pointer;
 }
 `
+
 const Ajuste = styled.div`
     width: 80%;
 `

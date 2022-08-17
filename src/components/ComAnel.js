@@ -81,7 +81,7 @@ export default function Home() {
                 <img src={logo}></img>
             </Topo>
 
-
+            <h1>{aro}</h1>
             <BoxTamanho>
                 <Quadrado>
                     <Circulo tamAnel={`${tamAnel}px`} />
@@ -89,11 +89,10 @@ export default function Home() {
                 
             </BoxTamanho>
             
+            <div>
+                <input type="range" name="tamanho" min="50" max="150" step="1" value={tamAnel} onChange={e => setTamAnel(e.target.value)} />
+            </div>
 
-            <input type="range" name="tamanho" min="0" max="150" step="1" value={tamAnel} onChange={e => setTamAnel(e.target.value)} />
-               
-               <h1>{aro}</h1>
-                       
         </Container>
     )
 }
@@ -104,16 +103,60 @@ const Container = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-around;
+    padding-bottom: 20%;
 
-    input {
-        margin-top: -15px;
+    div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
+
+    h1 {
+        height: 100px;
+        font-size: 50px;
+        text-align: center;
+        display: flex;
+        align-items: center;
+    }
+    input {
+    -webkit-appearance: none;
+    appearance: none;
+    border-radius: 5px;
+    background-color: #F7EDE4;
+    outline: none;
+    width: 60vw;
+    height: 10px;
+    margin: 10px 20px;
+    box-shadow: 0px 2px 2px 2px rgba(0, 0, 0, 0.1); 
+    }
+
+    input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%; 
+    box-shadow: 0px 2px 2px 2px rgba(0, 0, 0, 0.1);   
+    background: #A3612F;     
+    cursor: pointer;
+}
+
+    input::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%; 
+    box-shadow: 0px 2px 2px 2px rgba(0, 0, 0, 0.1);
+    background: #A3612F;
+    cursor: pointer;
+}
 `
 
 const Topo = styled.div`
     width: 100vw;
     display: flex;
     justify-content: center;
+    align-items: center;
     margin-top: 30px;
 
     img {
@@ -124,26 +167,26 @@ const Topo = styled.div`
 `
 
 const BoxTamanho = styled.div`
-    width: 300px;
-    max-width: 300px;
-    height: 200px;
-    background-image: url(${bgimg});
+    width: 60vw;
+    height: 250px;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-top: 40px;
 `
+const Quadrado = styled.div`
+    width: ${props => props.tamAnel};
+    height: ${props => props.tamAnel};
+    padding: 5px;
+    background-color: #CF6B2D;
+    border-radius: 100px;
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.1);
+`
+
 const Circulo = styled.div`
     width: ${props => props.tamAnel};
     height: ${props => props.tamAnel};
     border-radius: 100px;
-    border: 1px solid black;
-    background-color: #FFFFFF;
+    background-color: #F7EDE4;
 `
 
-const Quadrado = styled.div`
-    width: ${props => props.tamAnel};
-    height: ${props => props.tamAnel};
-    border: 1px solid black;
-
-`
