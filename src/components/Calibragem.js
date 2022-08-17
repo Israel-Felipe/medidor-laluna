@@ -36,7 +36,7 @@ const Container = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    
+
     div {
         display: flex;
         flex-direction: column;
@@ -98,6 +98,7 @@ const Ajuste = styled.div`
 
 const Cartao = styled.div`
     width: ${props => props.largura};
+    max-width: 100%;
     height: 60vh;
     margin-bottom: 100px;
     border-radius: 20px;
