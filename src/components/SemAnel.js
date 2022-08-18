@@ -68,17 +68,20 @@ export default function Home() {
     
     return (
         <Container>
-            <h1>{aro}</h1>
+            
             
             <Instrucoes>
                 <h2>Instrução:</h2>
-                <h3> Posicione O ANEL na figura acima e ajuste-a arrastando a bolinha abaixo, até que a figura fique do mesmo tamanho que o anel.</h3>
+                <h3> Arraste a bolinha até que indique a medida exata da circuferência do seu dedo, conforme você mediu seguindo as orientações da tela anterior. </h3>
             </Instrucoes>
-
+            
+            <h2>{tamAnel} cm</h2>
+            <input type="range" name="tamanho" min="5" max="7.5" step="0.1" value={tamAnel} onChange={e => setTamAnel(e.target.value)} />
 
             <Footer>
-            <h2>{tamAnel}cm</h2>
-            <input type="range" name="tamanho" min="5" max="7.5" step="0.1" value={tamAnel} onChange={e => setTamAnel(e.target.value)} />
+                <h1>{aro}</h1>
+                
+                
                 <a href="https://www.lalunapratas.com.br" target="_blank">
                     <button>Ir para o site</button>
                 </a>
@@ -98,6 +101,7 @@ const Container = styled.div`
     flex-direction: column;
     align-items: center;
     padding-bottom: 20%;
+    padding-top: 30%;
 
     div {
         display: flex;
@@ -122,6 +126,7 @@ const Container = styled.div`
     h3 {
         line-height: 22px;
         font-size: 16px;
+        margin-bottom: 2vh;
     }
 
     input {
@@ -160,6 +165,7 @@ const Container = styled.div`
 const Footer = styled.div`
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: center;
     position: fixed;
     bottom: 5vh;

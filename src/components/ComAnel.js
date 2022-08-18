@@ -87,6 +87,7 @@ export default function Home() {
             <Instrucoes>
                 <h2>Instrução:</h2>
                 <h3> Posicione O ANEL na figura acima e ajuste-a até que fiquem do mesmo tamanho.</h3>
+                <h4> OBS: Caso o seu anel modelo for anatômico, considere um número a menos do aro.</h4>
             </Instrucoes>
 
             <Botoes>
@@ -131,11 +132,14 @@ const Container = styled.div`
         font-size: 20px;
     }
 
-    h3 {
+    h3, h4 {
         line-height: 22px;
         font-size: 14px;
     }
 
+    h4 {
+        font-weight: bold;
+    }
     input {
     -webkit-appearance: none;
     appearance: none;
