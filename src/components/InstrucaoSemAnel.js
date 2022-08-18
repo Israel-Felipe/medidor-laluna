@@ -2,28 +2,29 @@ import styled from "styled-components"
 import { Link } from "react-router-dom";
 import { useContext} from "react";
 import UserContext from "../context/UserContext"; 
-import cartao from "../imgs/cartao.png";
+
+import logo from "../imgs/logo.svg";
+import gif from "../imgs/medir-com-barbante.gif";
 
 export default function Calibragem () {
     const { tamCartao, setTamCartao } = useContext(UserContext);
     return (
         <Container>
 
-            <Ajuste>
-                <Cartao largura={`${tamCartao}px`}>
-                    <img src={cartao} />
-                </Cartao>
-            </Ajuste>
+            <ImgGif>
+                <img src={gif} />
+            </ImgGif>
             
             <Instrucoes>
                 <h2>Instrução:</h2>
-                <h3> Para termos maior precisão com o medidor, precisamos calibrá-lo de acordo com a sua tela. Para isso, posicione um CARTÃO BANCÁRIO na figura acima e ajuste-a arrastando a bolinha abaixo, até que a figura fique com a mesma LARGURA do cartão.</h3>
+                <h3> 1 - Dê uma volta com o fio em seu dedo.</h3>
+                <h3> 2 - Marque a medida exata da circunferência de seu dedo.</h3>
+                <h3> 3 - Estenda o fio sobre uma régua e anote o comprimento marcado.</h3>
             </Instrucoes>
 
             <Botoes>
-                <input type="range" name="tamanho" min="250" max="400" step="1" value={tamCartao} onChange={e => setTamCartao(e.target.value)} />
                 <Link to={"/MedicaoComAnel"}>
-                    <button>Pronto, já calibrei!</button>
+                    <button>Pronto, tenho a medida!</button>
                 </Link>
                 <Link to={"/"}>
                     <Voltar>Voltar</Voltar>
@@ -91,11 +92,16 @@ const Container = styled.div`
 }
 `
 
-const Ajuste = styled.div`
+const ImgGif = styled.div`
     width: 90%;
     height: auto;
-    margin-bottom: 3vh;
+    margin: 3vh 0;
+    
+    img {
+        border-radius: 10px;
+    }
 `
+
 
 const Cartao = styled.div`
     width: ${props => props.largura};

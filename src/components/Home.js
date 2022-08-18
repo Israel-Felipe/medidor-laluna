@@ -14,7 +14,7 @@ export default function Home () {
                     <button>Tenho um anel para usar de modelo</button>
                 </Link>
                 
-                <Link to={"/Calibragem"}>
+                <Link to={"/InstrucaoSemAnel"}>
                     <Botao2>Não tenho nenhum anel para modelo</Botao2>
                 </Link>
             </Botoes>

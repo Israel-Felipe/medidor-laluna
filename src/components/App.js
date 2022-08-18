@@ -5,9 +5,12 @@ import UserContext from "../context/UserContext";
 import { useState } from "react";
 
 import Home from "./Home";
-import ComAnel from "./ComAnel";
-import SemAnel from "./SemAnel"
 import Calibragem from "./Calibragem";
+import ComAnel from "./ComAnel";
+
+import InstrucaoSemAnel from "./InstrucaoSemAnel";
+import SemAnel from "./SemAnel";
+
 import wallpaper from "../imgs/wallpaper.png";
 
 export default function App() {
@@ -21,10 +24,13 @@ export default function App() {
             <GlobalStyled />
             <UserContext.Provider value={{ tamCartao, setTamCartao, umCm }}>
                     <Routes>
-                        <Route path="/"          element={<Home />} />
-                        <Route path="/MedicaoComAnel"  element={<ComAnel />} />
+                        <Route path="/" element={<Home />} />
+                        <Route path="/calibragem" element={<Calibragem />} />
+                        <Route path="/MedicaoComAnel" element={<ComAnel />} />
+
+                        <Route path="/InstrucaoSemAnel"  element={<InstrucaoSemAnel />} />
                         <Route path="/semanel"  element={<SemAnel />} />
-                        <Route path="/calibragem"  element={<Calibragem     />} />
+                        
                     </Routes>
             </UserContext.Provider>
         </BrowserRouter>
@@ -32,7 +38,6 @@ export default function App() {
         </>
     )
 }
-
 
 
 const GlobalStyled = createGlobalStyle`
