@@ -120,10 +120,11 @@ const Container = styled.div`
 
     h1 {
         height: 100px;
-        font-size: 50px;
+        font-size: 35px;
         text-align: center;
         display: flex;
         align-items: center;
+        font-weight: bold;
     }
 
     h2 {
@@ -174,10 +175,10 @@ const Container = styled.div`
 `
 
 const BoxTamanho = styled.div`
-    width: 60vw;
+    width: 80vw;
     height: 30vh;
     align-items: left;
-    margin-top: 40px;
+    margin-top: 5vw;
     border-left: 1px solid black;
     border-bottom: 1px solid black;
     position: relative;
