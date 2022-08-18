@@ -29,7 +29,7 @@ export default function App() {
                         <Route path="/MedicaoComAnel" element={<ComAnel />} />
 
                         <Route path="/InstrucaoSemAnel"  element={<InstrucaoSemAnel />} />
-                        <Route path="/semanel"  element={<SemAnel />} />
+                        <Route path="/MedicaoSemAnel"  element={<SemAnel />} />
                         
                     </Routes>
             </UserContext.Provider>

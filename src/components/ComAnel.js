@@ -86,7 +86,7 @@ export default function Home() {
             
             <Instrucoes>
                 <h2>Instrução:</h2>
-                <h3> Posicione O ANEL na figura acima e ajuste-a arrastando a bolinha abaixo, até que a figura fique do mesmo tamanho que o anel.</h3>
+                <h3> Posicione O ANEL na figura acima e ajuste-a até que fiquem do mesmo tamanho.</h3>
             </Instrucoes>
 
             <Botoes>
@@ -133,7 +133,7 @@ const Container = styled.div`
 
     h3 {
         line-height: 22px;
-        font-size: 16px;
+        font-size: 14px;
     }
 
     input {

@@ -17,7 +17,7 @@ export default function Calibragem () {
             
             <Instrucoes>
                 <h2>Instrução:</h2>
-                <h3> Para termos maior precisão com o medidor, precisamos calibrá-lo de acordo com a sua tela. Para isso, posicione um CARTÃO BANCÁRIO na figura acima e ajuste-a arrastando a bolinha abaixo, até que a figura fique com a mesma LARGURA do cartão.</h3>
+                <h3> Primeiro precisamos calibrar o medidor. Para isso, posicione um CARTÃO BANCÁRIO na figura acima e ajuste-a arrastando a bolinha abaixo, até que fique com a mesma LARGURA do cartão.</h3>
             </Instrucoes>
 
             <Botoes>
@@ -56,7 +56,7 @@ const Container = styled.div`
 
     h3 {
         line-height: 22px;
-        font-size: 16px;
+        font-size: 14px;
     }
     input {
     -webkit-appearance: none;

@@ -1,74 +1,92 @@
-
-import { useEffect, useState } from "react"
+import { useEffect, useState, useContext } from "react"
 import styled from "styled-components"
-import logo from "../imgs/logo.svg"
-import bgimg from "../imgs/bg.svg"
+import UserContext from "../context/UserContext"; 
+import { Link } from "react-router-dom";
 
 export default function Home() {
-    const [tamAnel, setTamAnel] = useState(20);
-    let tamdiv = tamAnel*1.47;
-    const value = window.devicePixelRatio;
-
+    const { umCm } = useContext(UserContext);
+    
+    const [tamAnel, setTamAnel] = useState(5);
+    
     const [aro, setAro] = useState(10)
 
     useEffect(() => {
-        if(tamAnel <= 14.80) {
-            setAro(10)
-        } else if (tamAnel <= 15.20) {
-            setAro(11)
-        } else if (tamAnel <= 15.50) {
-            setAro(12)
-        } else if (tamAnel <= 15.80) {
-            setAro(13)
-        } else if (tamAnel <= 16.20) {
-            setAro(14)
-        } else if (tamAnel <= 16.50) {
-            setAro(15)
-        } else if (tamAnel <= 16.80) {
-            setAro(16)
-        } else if (tamAnel <= 17.20) {
-            setAro(17)
-        } else if (tamAnel <= 17.50) {
-            setAro(18)
-        } else if (tamAnel <= 17.80) {
-            setAro(19)
-        } else if (tamAnel <= 18.20) {
-            setAro(20)
-        } else if (tamAnel <= 18.50) {
-            setAro(21)
-        } else if (tamAnel <= 18.80) {
-            setAro(22)
-        } else if (tamAnel <= 19.20) {
-            setAro(23)
-        } else if (tamAnel <= 19.50) {
-            setAro(24)
+        if (tamAnel < 5.10) {
+            setAro("Aro: 10")
+        } else if (tamAnel < 5.20) {
+            setAro("Aro: 11")
+        } else if (tamAnel < 5.30) {
+            setAro("Aro: 12")
+        } else if (tamAnel < 5.40) {
+            setAro("Aro: 13")
+        } else if (tamAnel < 5.50) {
+            setAro("Aro: 14")
+        } else if (tamAnel < 5.60) {
+            setAro("Aro: 15")
+        } else if (tamAnel < 5.70) {
+            setAro("Aro: 16")
+        } else if (tamAnel < 5.80) {
+            setAro("Aro: 17")
+        } else if (tamAnel < 5.90) {
+            setAro("Aro: 18")
+        } else if (tamAnel < 6.00) {
+            setAro("Aro: 19")
+        } else if (tamAnel < 6.10) {
+            setAro("Aro: 20")
+        } else if (tamAnel < 6.20) {
+            setAro("Aro: 21")
+        } else if (tamAnel < 6.30) {
+            setAro("Aro: 22")
+        } else if (tamAnel < 6.40) {
+            setAro("Aro: 23")
+        } else if (tamAnel < 6.50) {
+            setAro("Aro: 24")
+        } else if (tamAnel < 6.60) {
+            setAro("Aro: 25")
+        } else if (tamAnel < 6.70) {
+            setAro("Aro: 26")
+        } else if (tamAnel < 6.80) {
+            setAro("Aro: 27")
+        } else if (tamAnel < 6.90) {
+            setAro("Aro: 28")
+        } else if (tamAnel < 7.00) {
+            setAro("Aro: 29")
+        } else if (tamAnel < 7.10) {
+            setAro("Aro: 30")
+        } else if (tamAnel < 7.20) {
+            setAro("Aro: 31")
+        } else if (tamAnel < 7.30) {
+            setAro("Aro: 32")
+        } else if (tamAnel < 7.40) {
+            setAro("Aro: 33")
+        } else if (tamAnel < 7.50) {
+            setAro("Aro: 34")
         } else {
-            setAro(25)
-        } 
+            setAro("Aro: 35")
+        }
     }, [tamAnel])
     
     return (
         <Container>
-            <Topo>
-                <img src={logo}></img>
-            </Topo>
+            <h1>{aro}</h1>
+            
+            <Instrucoes>
+                <h2>Instrução:</h2>
+                <h3> Posicione O ANEL na figura acima e ajuste-a arrastando a bolinha abaixo, até que a figura fique do mesmo tamanho que o anel.</h3>
+            </Instrucoes>
 
 
-            <BoxTamanho>
-                <Quadrado>
-                    <Circulo tamAnel={`${tamdiv}mm`} />
-                </Quadrado>
-                
-            </BoxTamanho>
-            
+            <Footer>
+            <h2>{tamAnel}cm</h2>
+            <input type="range" name="tamanho" min="5" max="7.5" step="0.1" value={tamAnel} onChange={e => setTamAnel(e.target.value)} />
+                <a href="https://www.lalunapratas.com.br" target="_blank">
+                    <button>Ir para o site</button>
+                </a>
+                <Link to={"/InstrucaoSemAnel"}>
+                    <Voltar>Voltar</Voltar>
+                </Link>
+            </Footer>
 
-            <h3>{tamAnel} mm</h3>
-            <input type="range" name="tamanho" min="14.6" max="20" step="0.2" value={tamAnel} onChange={e => setTamAnel(e.target.value)} />
-               
-               <h1>Aro: {aro}</h1>
-            
-                
-            
         </Container>
     )
 }
@@ -79,47 +97,100 @@ const Container = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #FFFFFF;
+    padding-bottom: 20%;
+
+    div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    h1 {
+        height: 100px;
+        font-size: 50px;
+        text-align: center;
+        display: flex;
+        align-items: center;
+    }
+
+    h2 {
+        font-weight: bold;
+        line-height: 40px;
+        font-size: 20px;
+    }
+
+    h3 {
+        line-height: 22px;
+        font-size: 16px;
+    }
 
     input {
-        margin-top: -15px;
+    -webkit-appearance: none;
+    appearance: none;
+    border-radius: 5px;
+    background-color: #F7EDE4;
+    outline: none;
+    width: 60vw;
+    height: 10px;
+    margin: 10px 20px;
+    box-shadow: 0px 2px 2px 2px rgba(0, 0, 0, 0.1); 
+    }
+
+    input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%; 
+    box-shadow: 0px 2px 2px 2px rgba(0, 0, 0, 0.1);   
+    background: #A3612F;     
+    cursor: pointer;
+    }
+
+    input::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%; 
+    box-shadow: 0px 2px 2px 2px rgba(0, 0, 0, 0.1);
+    background: #A3612F;
+    cursor: pointer;
     }
 `
 
-const Topo = styled.div`
-    width: 100vw;
+const Footer = styled.div`
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    margin-top: 30px;
+    position: fixed;
+    bottom: 5vh;
 
-    img {
-        width: 50%;
-        max-width: 300px;
+    button {
+        width: 60vw;
         height: auto;
+        margin: 20px;
+        padding: 20px;
+        background-color: #A3612F;
+        color: #FFFFFF;
+        font-size: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.1);
     }
 `
 
-const BoxTamanho = styled.div`
-    width: 300px;
-    max-width: 300px;
-    height: 200px;
-    background-image: url(${bgimg});
+const Voltar = styled.div`
     display: flex;
     align-items: center;
-    justify-content: center;
-    margin-top: 40px;
-`
-const Circulo = styled.div`
-    width: ${props => props.tamAnel} !important;
-    height: ${props => props.tamAnel} !important;
-    border-radius: 100px;
-    border: 1px solid black;
-    background-color: #FFFFFF;
+    color: #A3612F;
+    cursor: pointer;
+    font-size: 20px;
 `
 
-const Quadrado = styled.div`
-    width: ${props => props.tamAnel}!important;
-    height: ${props => props.tamAnel}!important;
-    border: 1px solid black;
-
+const Instrucoes = styled.div`
+    width: 80vw;
+    text-align: left;
 `

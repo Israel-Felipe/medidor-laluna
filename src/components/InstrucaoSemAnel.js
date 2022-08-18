@@ -23,7 +23,7 @@ export default function Calibragem () {
             </Instrucoes>
 
             <Botoes>
-                <Link to={"/MedicaoComAnel"}>
+                <Link to={"/MedicaoSemAnel"}>
                     <button>Pronto, tenho a medida!</button>
                 </Link>
                 <Link to={"/"}>
@@ -59,59 +59,16 @@ const Container = styled.div`
         line-height: 22px;
         font-size: 16px;
     }
-    input {
-    -webkit-appearance: none;
-    appearance: none;
-    border-radius: 5px;
-    background-color: #F7EDE4;
-    outline: none;
-    width: 60vw;
-    height: 10px;
-    margin: 10px 20px;
-    box-shadow: 0px 2px 2px 2px rgba(0, 0, 0, 0.1); 
-    }
-
-    input::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 25px;
-    height: 25px;
-    border-radius: 50%; 
-    box-shadow: 0px 2px 2px 2px rgba(0, 0, 0, 0.1);   
-    background: #A3612F;     
-    cursor: pointer;
-}
-
-    input::-moz-range-thumb {
-    width: 25px;
-    height: 25px;
-    border-radius: 50%; 
-    box-shadow: 0px 2px 2px 2px rgba(0, 0, 0, 0.1);
-    background: #A3612F;
-    cursor: pointer;
-}
 `
 
 const ImgGif = styled.div`
-    width: 90%;
+    width: 80vw;
     height: auto;
     margin: 3vh 0;
     
     img {
         border-radius: 10px;
     }
-`
-
-
-const Cartao = styled.div`
-    width: ${props => props.largura};
-    max-width: 100%;
-    height: 40vh;
-    border-radius: 20px;
-    border: 1px solid black;
-    padding: 40px;
-    background-color: #F7EDE4;
-    position: relative;
 `
 
 const Botoes = styled.div`
