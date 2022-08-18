@@ -41,6 +41,7 @@ const GlobalStyled = createGlobalStyle`
     *, body {
         box-sizing: border-box;
         cursor: default;
+        font-family: 'Roboto', sans-serif;
     a {
         text-decoration: none;
     }

@@ -127,12 +127,12 @@ const Container = styled.div`
 
     h2 {
         font-weight: bold;
-        line-height: 25px;
+        line-height: 40px;
         font-size: 20px;
     }
 
     h3 {
-        line-height: 20px;
+        line-height: 22px;
         font-size: 16px;
     }
 

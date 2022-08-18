@@ -1,9 +1,10 @@
 import styled from "styled-components"
 import { Link } from "react-router-dom";
-import { useState, useContext} from "react";
+import { useContext} from "react";
 import UserContext from "../context/UserContext"; 
 
 import logo from "../imgs/logo.svg";
+import cartao from "../imgs/cartao.png";
 
 export default function Calibragem () {
     const { tamCartao, setTamCartao } = useContext(UserContext);
@@ -11,7 +12,9 @@ export default function Calibragem () {
         <Container>
 
             <Ajuste>
-                <Cartao largura={`${tamCartao}px`}><img src={logo}></img><div></div></Cartao>
+                <Cartao largura={`${tamCartao}px`}>
+                    <img src={cartao} />
+                </Cartao>
             </Ajuste>
             
             <Instrucoes>
@@ -20,7 +23,7 @@ export default function Calibragem () {
             </Instrucoes>
 
             <Botoes>
-                <input type="range" name="tamanho" min="200" max="400" step="1" value={tamCartao} onChange={e => setTamCartao(e.target.value)} />
+                <input type="range" name="tamanho" min="250" max="400" step="1" value={tamCartao} onChange={e => setTamCartao(e.target.value)} />
                 <Link to={"/MedicaoComAnel"}>
                     <button>Pronto, já calibrei!</button>
                 </Link>
@@ -49,12 +52,12 @@ const Container = styled.div`
 
     h2 {
         font-weight: bold;
-        line-height: 25px;
+        line-height: 40px;
         font-size: 20px;
     }
 
     h3 {
-        line-height: 20px;
+        line-height: 22px;
         font-size: 16px;
     }
     input {
@@ -91,7 +94,7 @@ const Container = styled.div`
 `
 
 const Ajuste = styled.div`
-    width: 80%;
+    width: 90%;
     height: auto;
     margin-bottom: 3vh;
 `
@@ -102,9 +105,9 @@ const Cartao = styled.div`
     height: 40vh;
     border-radius: 20px;
     border: 1px solid black;
-    padding: 30px;
+    padding: 40px;
     background-color: #F7EDE4;
-
+    position: relative;
 `
 
 const Botoes = styled.div`
