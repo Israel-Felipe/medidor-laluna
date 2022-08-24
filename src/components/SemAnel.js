@@ -1,10 +1,8 @@
-import { useEffect, useState, useContext } from "react"
+import { useEffect, useState } from "react"
 import styled from "styled-components"
-import UserContext from "../context/UserContext"; 
 import { Link } from "react-router-dom";
 
 export default function Home() {
-    const { umCm } = useContext(UserContext);
     
     const [tamAnel, setTamAnel] = useState(5);
     
@@ -82,7 +80,7 @@ export default function Home() {
                 <h1>{aro}</h1>
                 
                 
-                <a href="https://www.lalunapratas.com.br" target="_blank">
+                <a href="https://www.lalunapratas.com.br/aneis" target="_blank" rel="noreferrer">
                     <button>Ir para o site</button>
                 </a>
                 <Link to={"/InstrucaoSemAnel"}>

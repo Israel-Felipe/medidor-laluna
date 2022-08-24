@@ -72,13 +72,13 @@ export default function Home() {
         } else {
             setAro("Aro: ##")
         }
-    }, [tamAnel])
+    }, [tamAnelCm])
     
     return (
         <Container>
             <BoxTamanho>
                 <CirculoMaior>
-                    <Circulo tamAnel={`${tamAnel}px`}><img src={bganel}></img></Circulo>
+                    <Circulo tamAnel={`${tamAnel}px`}><img src={bganel} alt="anel"></img></Circulo>
                 </CirculoMaior>
             </BoxTamanho>
 
@@ -92,7 +92,7 @@ export default function Home() {
 
             <Botoes>
             <input type="range" name="tamanho" min="50" max="200" step="0.5" value={tamAnel} onChange={e => setTamAnel(e.target.value)} />
-                <a href="https://www.lalunapratas.com.br" target="_blank">
+                <a href="https://www.lalunapratas.com.br/aneis" target="_blank" rel="noreferrer">
                     <button>Ir para o site</button>
                 </a>
                 <Link to={"/Calibragem"}>
@@ -202,6 +202,8 @@ const Circulo = styled.div`
 
     img {
         border-radius: 100px;
+        max-height: 100%;
+        max-width: 100%;
     }
 `
 

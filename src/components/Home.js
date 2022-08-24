@@ -6,7 +6,7 @@ export default function Home () {
     return (
         <Container>
             <Topo>
-                <img src={logo}/>
+                <img src={logo} alt="La Luna PratasS"/>
             </Topo>
 
             <Botoes>

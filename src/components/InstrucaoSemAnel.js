@@ -1,25 +1,22 @@
 import styled from "styled-components"
 import { Link } from "react-router-dom";
-import { useContext} from "react";
-import UserContext from "../context/UserContext"; 
 
-import logo from "../imgs/logo.svg";
 import gif from "../imgs/medir-com-barbante.gif";
 
 export default function Calibragem () {
-    const { tamCartao, setTamCartao } = useContext(UserContext);
+
     return (
         <Container>
 
             <ImgGif>
-                <img src={gif} />
+                <img src={gif} alt="instrucao"/>
             </ImgGif>
             
             <Instrucoes>
                 <h2>Instrução:</h2>
-                <h3> 1 - Dê uma volta com o fio em seu dedo.</h3>
-                <h3> 2 - Marque a medida exata da circunferência de seu dedo.</h3>
-                <h3> 3 - Estenda o fio sobre uma régua e anote o comprimento marcado.</h3>
+                <h3> 1 - Enrole um fio em seu dedo (apenas uma volta).</h3>
+                <h3> 2 - Marque no fio o ponto onde se encontraram.</h3>
+                <h3> 3 - Estenda o fio sobre uma régua e anote o valor do comprimento entre os dois pontos.</h3>
             </Instrucoes>
 
             <Botoes>
@@ -68,6 +65,8 @@ const ImgGif = styled.div`
     
     img {
         border-radius: 10px;
+        max-height: 100%;
+        max-width: 100%;
     }
 `
 

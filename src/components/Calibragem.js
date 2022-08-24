@@ -11,7 +11,7 @@ export default function Calibragem () {
 
             <Ajuste>
                 <Cartao largura={`${tamCartao}px`}>
-                    <img src={cartao} />
+                    <img src={cartao} alt="calibragem"/>
                 </Cartao>
             </Ajuste>
             
@@ -106,6 +106,11 @@ const Cartao = styled.div`
     padding: 40px;
     background-color: #F7EDE4;
     position: relative;
+
+    img {
+        max-height: 100%;
+        max-width: 100%;
+    }
 `
 
 const Botoes = styled.div`
