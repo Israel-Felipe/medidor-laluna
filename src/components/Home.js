@@ -20,7 +20,7 @@ export default function Home() {
       </Botoes>
 
       <Dev>
-        <a href="https://www.linkedin.com/in/israelfteixeira/" target="blank">
+        <a href="https://linktr.ee/israel.felipe" target="blank">
           <h1>Desenvolvido por: Israel Felipe</h1>
         </a>
       </Dev>
