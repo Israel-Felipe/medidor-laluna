@@ -11,34 +11,31 @@ import ComAnel from "./ComAnel";
 import InstrucaoSemAnel from "./InstrucaoSemAnel";
 import SemAnel from "./SemAnel";
 
-import wallpaper from "../imgs/wallpaper.png";
+import wallpaper from "../imgs/wallpaper2.png";
 
 export default function App() {
-    const [tamCartao, setTamCartao] = useState("400");
-    const umCm = tamCartao / 5.4;
+  const [tamCartao, setTamCartao] = useState("400");
+  const umCm = tamCartao / 5.4;
 
-    return (
-        <>
-        <Wallpaper src={wallpaper}></Wallpaper>
-        <BrowserRouter>
-            <GlobalStyled />
-            <UserContext.Provider value={{ tamCartao, setTamCartao, umCm }}>
-                    <Routes>
-                        <Route path="/" element={<Home />} />
-                        <Route path="/calibragem" element={<Calibragem />} />
-                        <Route path="/MedicaoComAnel" element={<ComAnel />} />
+  return (
+    <>
+      <Wallpaper src={wallpaper}></Wallpaper>
+      <BrowserRouter>
+        <GlobalStyled />
+        <UserContext.Provider value={{ tamCartao, setTamCartao, umCm }}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/calibragem" element={<Calibragem />} />
+            <Route path="/MedicaoComAnel" element={<ComAnel />} />
 
-                        <Route path="/InstrucaoSemAnel"  element={<InstrucaoSemAnel />} />
-                        <Route path="/MedicaoSemAnel"  element={<SemAnel />} />
-                        
-                    </Routes>
-            </UserContext.Provider>
-        </BrowserRouter>
-        
-        </>
-    )
+            <Route path="/InstrucaoSemAnel" element={<InstrucaoSemAnel />} />
+            <Route path="/MedicaoSemAnel" element={<SemAnel />} />
+          </Routes>
+        </UserContext.Provider>
+      </BrowserRouter>
+    </>
+  );
 }
-
 
 const GlobalStyled = createGlobalStyle`
     ${reset}
@@ -51,9 +48,9 @@ const GlobalStyled = createGlobalStyle`
         text-decoration: none;
     }
     }
-`
+`;
 const Wallpaper = styled.img`
-    position: fixed;
-    height: 100vh;
-    z-index: -1;
-`
+  position: fixed;
+  height: 100vh;
+  z-index: -1;
+`;
